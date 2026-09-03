@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07111d" />
+  <title>HTML — простое объяснение</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main id="deck" class="deck">
+  <div class="grid"></div>
+  <header class="top"><div class="brand"><i></i>HTML / ОСНОВЫ</div><div class="count"><b id="n">01</b><span></span><em>12</em></div></header>
+
+  <section class="slide active" data-title="Что такое HTML">
+    <div class="head"><small>01 · САМАЯ ГЛАВНАЯ МЫСЛЬ</small><h1>Что такое <mark>HTML</mark>?</h1><p class="reveal" data-step="1">HTML говорит браузеру, <b>что находится на странице</b>.</p></div>
+    <div class="scene center">
+      <div class="html-logo reveal" data-step="2"><span>&lt;</span>HTML<span>/&gt;</span></div>
+      <div class="rays reveal" data-step="3"><i></i><i></i><i></i><i></i></div>
+      <div class="four reveal" data-step="3">
+        <article><strong>H1</strong><b>Заголовок</b></article><article><strong>¶</strong><b>Текст</b></article><article><strong>▧</strong><b>Картинка</b></article><article><strong>↗</strong><b>Ссылка</b></article>
+      </div>
+      <div class="pill reveal" data-step="4">HTML = <b>структура страницы</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="HTML CSS JS">
+    <div class="head"><small>02 · ТРИ ТЕХНОЛОГИИ</small><h1>Кто за что <mark>отвечает</mark>?</h1></div>
+    <div class="scene techs">
+      <article class="tech reveal" data-step="1"><span class="icon cyan">&lt;/&gt;</span><h2>HTML</h2><p>Что есть на странице</p><div class="wire"><i></i><i></i></div></article>
+      <article class="tech reveal" data-step="2"><span class="icon violet">✦</span><h2>CSS</h2><p>Как это выглядит</p><div class="wire styled"><i></i><i></i></div></article>
+      <article class="tech reveal" data-step="3"><span class="icon orange">⚡</span><h2>JavaScript</h2><p>Что умеет делать</p><div class="lamp"><i></i><b>ON</b></div></article>
+      <div class="pill bottom reveal" data-step="4">Сегодня фокус: <b>HTML — строим каркас</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Что такое тег">
+    <div class="head"><small>03 · ОСНОВА HTML</small><h1>Что такое <mark>тег</mark>?</h1></div>
+    <div class="scene tag-scene">
+      <div class="huge-code reveal" data-step="1"><span>&lt;p&gt;</span></div>
+      <div class="down reveal" data-step="2">↓</div>
+      <div class="huge-code reveal" data-step="2"><span>&lt;p&gt;</span><b>Привет!</b><span>&lt;/p&gt;</span></div>
+      <div class="labels reveal" data-step="3"><i>открывающий тег</i><i>содержимое</i><i>закрывающий тег</i></div>
+      <div class="pill reveal" data-step="4">Тег — это <b>команда для браузера</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Парные теги">
+    <div class="head"><small>04 · ПАРНЫЕ ТЕГИ</small><h1>Почему <mark>&lt;p&gt;</mark> написан два раза?</h1></div>
+    <div class="scene pair">
+      <article class="gate reveal" data-step="1"><small>НАЧАЛО</small><code>&lt;p&gt;</code></article>
+      <div class="text-box reveal" data-step="2">Здесь находится текст</div>
+      <article class="gate reveal" data-step="3"><small>КОНЕЦ</small><code>&lt;/p&gt;</code></article>
+      <div class="formula reveal" data-step="4"><code>&lt;p&gt;</code><span>текст</span><code>&lt;/p&gt;</code></div>
+      <p class="note reveal" data-step="5">Открыли → положили содержимое → закрыли</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Разные теги">
+    <div class="head"><small>05 · У КАЖДОГО ТЕГА СВОЯ РАБОТА</small><h1>Теги бывают <mark>разными</mark></h1></div>
+    <div class="scene tag-list">
+      <div class="row reveal" data-step="1"><code>&lt;h1&gt;Заголовок&lt;/h1&gt;</code><div class="preview h1">Заголовок</div></div>
+      <div class="row reveal" data-step="2"><code>&lt;p&gt;Обычный текст&lt;/p&gt;</code><div class="preview">Обычный текст</div></div>
+      <div class="row reveal" data-step="3"><code>&lt;a&gt;Ссылка&lt;/a&gt;</code><div class="preview link">Ссылка ↗</div></div>
+      <div class="row reveal" data-step="4"><code>&lt;img&gt;</code><div class="preview"><span class="mini-pic">◒</span></div></div>
+      <div class="pill reveal" data-step="5">Название тега говорит браузеру, <b>что это за элемент</b>.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Каркас документа">
+    <div class="head"><small>06 · КАРКАС СТРАНИЦЫ</small><h1>HTML-документ — это <mark>дерево</mark></h1></div>
+    <div class="scene two">
+      <div class="tree reveal" data-step="1"><b>html</b><span class="stem"></span><div><i>head</i><i>body</i></div></div>
+      <div class="code reveal" data-step="2"><div class="dots">● ● ●</div><pre><span class="muted">&lt;!DOCTYPE html&gt;</span>
+<span>&lt;html&gt;</span>
+  <span>&lt;head&gt;</span> ... <span>&lt;/head&gt;</span>
+  <span>&lt;body&gt;</span> ... <span>&lt;/body&gt;</span>
+<span>&lt;/html&gt;</span></pre></div>
+      <div class="pill bottom reveal" data-step="3"><b>html</b> — контейнер всей страницы</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Head">
+    <div class="head"><small>07 · HEAD</small><h1>Что находится в <mark>&lt;head&gt;</mark>?</h1></div>
+    <div class="scene head-demo">
+      <div class="big-word reveal" data-step="1">HEAD<small>служебная часть</small></div>
+      <div class="browser reveal" data-step="2"><div class="browser-bar"><span>Мой сайт</span><i>+</i></div><div class="browser-empty"></div></div>
+      <div class="code compact reveal" data-step="3"><pre><span>&lt;title&gt;</span><b>Мой сайт</b><span>&lt;/title&gt;</span></pre></div>
+      <div class="arrow reveal" data-step="3">↗</div>
+      <div class="pill bottom reveal" data-step="4">HEAD = информация <b>о странице</b>, а не содержимое страницы</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Body">
+    <div class="head"><small>08 · BODY</small><h1>Что находится в <mark>&lt;body&gt;</mark>?</h1></div>
+    <div class="scene body-demo">
+      <div class="body-box reveal" data-step="1"><span class="body-label">BODY</span>
+        <h2 class="inner" data-inner="2">Заголовок</h2>
+        <p class="inner" data-inner="3">Обычный текст на странице</p>
+        <div class="hero-pic inner" data-inner="4"><i></i><b></b></div>
+        <a class="inner" data-inner="5">Ссылка ↗</a>
+      </div>
+      <div class="pill bottom reveal" data-step="6">BODY = <b>то, что видит пользователь</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Вложенность">
+    <div class="head"><small>09 · ВЛОЖЕННОСТЬ</small><h1>Теги могут быть <mark>внутри</mark> других тегов</h1></div>
+    <div class="scene two nesting">
+      <div class="nest outer reveal" data-step="1"><span>body</span><div class="nest inner" data-inner="2"><span>h1</span><b>Мой сайт</b></div><div class="nest inner" data-inner="3"><span>p</span><b>Привет!</b></div></div>
+      <div class="middle-arrow reveal" data-step="4">→</div>
+      <div class="code reveal" data-step="4"><div class="dots">● ● ●</div><pre><span>&lt;body&gt;</span>
+  <span>&lt;h1&gt;</span>Мой сайт<span>&lt;/h1&gt;</span>
+  <span>&lt;p&gt;</span>Привет!<span>&lt;/p&gt;</span>
+<span>&lt;/body&gt;</span></pre></div>
+      <div class="pill bottom reveal" data-step="5">Тег внутри другого тега = <b>вложенный тег</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Атрибуты">
+    <div class="head"><small>10 · АТРИБУТЫ</small><h1>Тегу можно дать <mark>дополнительную информацию</mark></h1></div>
+    <div class="scene attr">
+      <div class="huge-code reveal" data-step="1"><span>&lt;a&gt;</span><b>Google</b><span>&lt;/a&gt;</span></div>
+      <div class="attr-chip reveal" data-step="2"><b>href</b> = "https://google.com"</div>
+      <div class="huge-code small reveal" data-step="3"><span>&lt;a <em>href="https://google.com"</em>&gt;</span><b>Google</b><span>&lt;/a&gt;</span></div>
+      <div class="fake-link reveal" data-step="4">Google ↗</div>
+      <div class="pill reveal" data-step="5"><b>Атрибут</b> уточняет, как должен работать тег</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Картинка">
+    <div class="head"><small>11 · IMG</small><h1>Как браузер показывает <mark>картинку</mark>?</h1></div>
+    <div class="scene image-demo">
+      <div class="image-left"><div class="huge-code reveal" data-step="1"><span>&lt;img&gt;</span></div><div class="huge-code small reveal" data-step="2"><span>&lt;img <em>src="yurt.jpg"</em>&gt;</span></div><div class="path reveal" data-step="3"><b>img</b><i>→</i><b>src</b><i>→</i><b>yurt.jpg</b><i>→</i></div></div>
+      <div class="photo reveal" data-step="4"><span class="sun"></span><i class="mount m1"></i><i class="mount m2"></i><div class="yurt"><b></b><i></i></div><small>картинка появилась</small></div>
+      <div class="pill bottom reveal" data-step="5"><b>src</b> = откуда взять изображение</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Итог">
+    <div class="head"><small>12 · СОБИРАЕМ ВСЁ ВМЕСТЕ</small><h1>Из кода получается <mark>страница</mark></h1></div>
+    <div class="scene final">
+      <div class="code final-code reveal" data-step="1"><div class="dots">index.html</div><pre><span>&lt;h1&gt;</span>Аренда юрт<span>&lt;/h1&gt;</span>
+
+<span>&lt;p&gt;</span>Отдых в горах Кыргызстана<span>&lt;/p&gt;</span>
+
+<span>&lt;img <em>src="yurt.jpg"</em>&gt;</span>
+
+<span>&lt;a <em>href="tel:+996..."</em>&gt;</span>
+  Позвонить
+<span>&lt;/a&gt;</span></pre></div>
+      <div class="render reveal" data-step="2"><small>БРАУЗЕР</small>→</div>
+      <div class="site reveal" data-step="3"><nav><b>YURT.</b><span>О нас</span><span>Контакты</span></nav><div class="site-copy"><small>КЫРГЫЗСТАН</small><h2>Аренда юрт</h2><p>Отдых в горах Кыргызстана</p><button>Позвонить</button></div><div class="site-art"><i></i><b></b><div></div></div></div>
+      <div class="formula bottom reveal" data-step="4"><code>HTML-код</code><span>→</span><code>браузер</code><span>→</span><code class="hot">страница</code></div>
+      <p class="note final-note reveal" data-step="5">Теперь открываем VS Code и пишем это руками.</p>
+    </div>
+  </section>
+
+  <footer class="controls"><button id="prev">←</button><div class="progress"><i id="bar"></i></div><div class="hint"><kbd>Space</kbd> следующий шаг</div><button id="next">→</button></footer>
+  <button id="full" class="float one" title="Полный экран (F)">⌗</button><button id="clean" class="float two" title="Скрыть интерфейс (H)">◌</button>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
