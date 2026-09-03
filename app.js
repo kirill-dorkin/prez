@@ -2,6 +2,172 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+
+  // Lesson 4 v2: explain <div>, show nesting as code, simplify the final slide.
+  function applyLessonV2() {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://cdn.jsdelivr.net/gh/kirill-dorkin/prez@lesson-04-html-plan/v2.css';
+    document.head.append(css);
+
+    const sameSlide = document.querySelector('[data-slide-id="same-look"]');
+    if (sameSlide) {
+      sameSlide.dataset.cue = '5 минут. Покажите, что страница на div и страница с семантикой выглядят одинаково. Спросите: какой код проще понять без пояснений? Это мост к следующему экрану про div.';
+      const copy = sameSlide.querySelector('.same-copy');
+      if (copy) copy.innerHTML = '<h2>С <code>&lt;div&gt;</code> и с семантикой<br>сайт выглядит одинаково</h2><p>Разница не во внешнем виде. Разница в том, насколько легко понять код.</p><div class="same-switch"><button class="secondary is-active" type="button" data-same-mode="plain">На &lt;div&gt;</button><button class="secondary" type="button" data-same-mode="semantic">Семантика</button></div>';
+      const label = sameSlide.querySelector('[data-same-label]');
+      if (label) label.textContent = 'index.html · всё на div';
+      const code = sameSlide.querySelector('[data-same-code]');
+      if (code) code.textContent = `<body>
+    <div>
+        <h1>Мой сайт</h1>
+        <div>
+            <a href="#">Обо мне</a>
+            <a href="#">Контакты</a>
+        </div>
+    </div>
+
+    <div>
+        <h2>Обо мне</h2>
+        <p>Меня зовут...</p>
+    </div>
+
+    <div><p>Мой первый сайт</p></div>
+</body>`;
+    }
+
+    const bodyMap = document.querySelector('[data-slide-id="body-map"]');
+    if (bodyMap && !document.querySelector('[data-slide-id="div-semantic"]')) {
+      const divSlide = document.createElement('section');
+      divSlide.className = 'slide kind-div-semantic';
+      divSlide.setAttribute('aria-hidden', 'true');
+      divSlide.dataset.slideId = 'div-semantic';
+      divSlide.dataset.chapter = 'meaning';
+      divSlide.dataset.title = 'Зачем нужна семантика';
+      divSlide.dataset.cue = '6 минут. Сначала покажите код слева и спросите: «Что находится в первом div? А во втором?» Затем сравните с кодом справа. Главная мысль: div — нейтральный контейнер, семантический тег сразу объясняет роль блока. Div не плохой и не запрещён.';
+      divSlide.innerHTML = `<span class="slide-number">06</span>
+      <span class="eyebrow">Перед семантикой · знакомимся с &lt;div&gt;</span>
+      <div class="div-semantic-layout">
+        <div class="div-semantic-copy">
+          <small>ОДИН И ТОТ ЖЕ КОНТЕЙНЕР</small>
+          <h2><code>&lt;div&gt;</code> умеет группировать,<br>но не объясняет <em>что внутри</em></h2>
+          <p><code>&lt;div&gt;</code> — нейтральная коробка. В неё можно положить заголовок, ссылки, текст или целый кусок страницы.</p>
+          <div class="div-rule"><b>Семантика</b><span>это когда название тега сразу говорит, какую роль играет блок.</span></div>
+        </div>
+        <div class="div-code-compare" aria-label="Сравнение div и семантических тегов">
+          <div class="compare-code-card muted-code">
+            <div class="compare-code-head"><span>БЕЗ СМЫСЛА В НАЗВАНИИ</span><code>&lt;div&gt;</code></div>
+            <pre><code>&lt;body&gt;
+    <mark>&lt;div&gt;</mark> ... <mark>&lt;/div&gt;</mark>   <i>← что это?</i>
+    <mark>&lt;div&gt;</mark> ... <mark>&lt;/div&gt;</mark>   <i>← а это?</i>
+    <mark>&lt;div&gt;</mark> ... <mark>&lt;/div&gt;</mark>   <i>← и это?</i>
+&lt;/body&gt;</code></pre>
+          </div>
+          <div class="semantic-arrow">→</div>
+          <div class="compare-code-card semantic-code">
+            <div class="compare-code-head"><span>СМЫСЛ В НАЗВАНИИ</span><b>семантика</b></div>
+            <pre><code>&lt;body&gt;
+    <mark>&lt;header&gt;</mark> ... <mark>&lt;/header&gt;</mark>   <i>← верх</i>
+    <mark>&lt;main&gt;</mark> ... <mark>&lt;/main&gt;</mark>       <i>← главное</i>
+    <mark>&lt;footer&gt;</mark> ... <mark>&lt;/footer&gt;</mark>   <i>← низ</i>
+&lt;/body&gt;</code></pre>
+          </div>
+          <div class="div-note"><code>&lt;div&gt;</code><span>не исчезает. Используем его, когда нужен контейнер, но подходящего смыслового тега нет.</span></div>
+        </div>
+      </div>`;
+      bodyMap.before(divSlide);
+    }
+
+    if (bodyMap) {
+      bodyMap.className = 'slide kind-nesting kind-code-map';
+      bodyMap.dataset.chapter = 'structure';
+      bodyMap.dataset.title = 'Где живут новые теги';
+      bodyMap.dataset.cue = '7 минут. Читайте код сверху вниз. Сначала покажите head и title, затем body. Главный вопрос группе: «Где должны находиться header, main и footer?» Ответ: внутри body.';
+      bodyMap.innerHTML = `<span class="slide-number">07</span>
+      <span class="eyebrow">Вложенность · смотрим прямо в код</span>
+      <div class="code-map-layout">
+        <div class="code-map-copy">
+          <small>ГЛАВНОЕ ПРАВИЛО</small>
+          <h2>Семантические теги<br>живут внутри <code>&lt;body&gt;</code></h2>
+          <p>Каркас документа не меняется. Мы просто делаем содержимое <code>&lt;body&gt;</code> понятнее.</p>
+          <div class="code-map-rules">
+            <div><code>&lt;head&gt;</code><span>служебная часть страницы</span></div>
+            <div><code>&lt;title&gt;</code><span>название вкладки браузера</span></div>
+            <div class="strong"><code>&lt;body&gt;</code><span>всё, что видит пользователь</span></div>
+          </div>
+        </div>
+        <div class="document-code-card">
+          <div class="document-code-head"><b>index.html</b><span>читаем сверху вниз</span></div>
+          <pre><code><span class="dim">&lt;!DOCTYPE html&gt;</span>
+&lt;html&gt;
+
+    <mark class="head-mark">&lt;head&gt;</mark>
+        <mark class="title-mark">&lt;title&gt;Мой сайт&lt;/title&gt;</mark>   <i>← название вкладки</i>
+    <mark class="head-mark">&lt;/head&gt;</mark>
+
+    <mark class="body-mark">&lt;body&gt;</mark>                      <i>← всё видимое начинается здесь</i>
+
+        <mark>&lt;header&gt;</mark> ... <mark>&lt;/header&gt;</mark>     <i>← верх страницы</i>
+
+        <mark>&lt;main&gt;</mark>
+            <mark class="soft">&lt;section&gt;</mark> ... <mark class="soft">&lt;/section&gt;</mark> <i>← один раздел</i>
+        <mark>&lt;/main&gt;</mark>                       <i>← главное содержимое</i>
+
+        <mark>&lt;footer&gt;</mark> ... <mark>&lt;/footer&gt;</mark>     <i>← низ страницы</i>
+
+    <mark class="body-mark">&lt;/body&gt;</mark>
+&lt;/html&gt;</code></pre>
+          <div class="document-code-bottom"><b>Запоминаем:</b><span><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> и <code>&lt;footer&gt;</code> находятся внутри <code>&lt;body&gt;</code>.</span></div>
+        </div>
+      </div>`;
+    }
+
+    const finalSlide = document.querySelector('[data-slide-id="final"]');
+    if (finalSlide) {
+      finalSlide.className = 'slide kind-final-simple';
+      finalSlide.dataset.chapter = 'finish';
+      finalSlide.dataset.title = 'Итог урока';
+      finalSlide.dataset.cue = '4-5 минут. Не проверяйте всё повторно. Попросите одного ученика объяснить разницу между div и семантическим тегом, а второго — назвать порядок header → main → footer. Затем сделайте мостик к CSS.';
+      finalSlide.innerHTML = `<span class="slide-number">16</span>
+      <span class="eyebrow">Итог · одна схема вместо списка тегов</span>
+      <div class="final-simple-layout">
+        <div class="final-simple-copy">
+          <small>ГЛАВНАЯ МЫСЛЬ</small>
+          <h2>HTML — это<br><mark>смысл + структура</mark></h2>
+          <p>Мы не просто пишем теги. Мы объясняем браузеру и разработчику, где какая часть страницы.</p>
+          <div class="final-mini-rules">
+            <span><code>&lt;div&gt;</code> — нейтральный контейнер</span>
+            <span>семантический тег — контейнер с понятным смыслом</span>
+          </div>
+        </div>
+        <div class="final-code-card">
+          <div class="final-code-head"><b>Теперь страницу читаем так</b><span>сверху вниз</span></div>
+          <pre><code>&lt;body&gt;
+    <mark>&lt;header&gt;</mark>
+        &lt;nav&gt;...&lt;/nav&gt;
+    <mark>&lt;/header&gt;</mark>
+
+    <mark>&lt;main&gt;</mark>
+        <mark class="soft">&lt;section&gt;</mark>...<mark class="soft">&lt;/section&gt;</mark>
+        <mark class="soft">&lt;section&gt;</mark>...<mark class="soft">&lt;/section&gt;</mark>
+    <mark>&lt;/main&gt;</mark>
+
+    <mark>&lt;footer&gt;</mark>...<mark>&lt;/footer&gt;</mark>
+&lt;/body&gt;</code></pre>
+          <div class="final-next"><small>СЛЕДУЮЩИЙ УРОК</small><b>Каркас готов → подключаем CSS и меняем внешний вид.</b></div>
+        </div>
+      </div>`;
+    }
+
+    document.querySelectorAll('.slide').forEach((slide, index) => {
+      slide.dataset.slide = String(index + 1);
+      const number = slide.querySelector('.slide-number');
+      if (number) number.textContent = String(index + 1).padStart(2, '0');
+    });
+  }
+
+  applyLessonV2();
+
   // Deck navigation
   const slides = $$('.slide');
   const lesson = $('#lesson');
@@ -207,8 +373,23 @@
   if (same) {
     const modes = {
       plain: {
-        label: 'index.html · без структуры',
-        code: `<body>\n    <h1>Мой сайт</h1>\n    <a href="#">Обо мне</a>\n    <a href="#">Контакты</a>\n\n    <h2>Обо мне</h2>\n    <p>Меня зовут...</p>\n\n    <p>Мой первый сайт</p>\n</body>`
+        label: 'index.html · всё на div',
+        code: `<body>
+    <div>
+        <h1>Мой сайт</h1>
+        <div>
+            <a href="#">Обо мне</a>
+            <a href="#">Контакты</a>
+        </div>
+    </div>
+
+    <div>
+        <h2>Обо мне</h2>
+        <p>Меня зовут...</p>
+    </div>
+
+    <div><p>Мой первый сайт</p></div>
+</body>`
       },
       semantic: {
         label: 'index.html · со смыслом',
