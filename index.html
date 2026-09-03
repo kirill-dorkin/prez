@@ -1,164 +1,382 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#07111d" />
-  <title>HTML — простое объяснение</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6c4cff">
+  <meta name="description" content="MetaLabs · Урок 4 · HTML как план страницы">
+  <title>MetaLabs · Урок 4 · HTML как план страницы</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-<main id="deck" class="deck">
-  <div class="grid"></div>
-  <header class="top"><div class="brand"><i></i>HTML / ОСНОВЫ</div><div class="count"><b id="n">01</b><span></span><em>12</em></div></header>
+<body class="lesson-body">
+<main class="lesson" id="lesson" data-chapter="start">
+  <div class="presentation" id="presentation">
 
-  <section class="slide active" data-title="Что такое HTML">
-    <div class="head"><small>01 · САМАЯ ГЛАВНАЯ МЫСЛЬ</small><h1>Что такое <mark>HTML</mark>?</h1><p class="reveal" data-step="1">HTML говорит браузеру, <b>что находится на странице</b>.</p></div>
-    <div class="scene center">
-      <div class="html-logo reveal" data-step="2"><span>&lt;</span>HTML<span>/&gt;</span></div>
-      <div class="rays reveal" data-step="3"><i></i><i></i><i></i><i></i></div>
-      <div class="four reveal" data-step="3">
-        <article><strong>H1</strong><b>Заголовок</b></article><article><strong>¶</strong><b>Текст</b></article><article><strong>▧</strong><b>Картинка</b></article><article><strong>↗</strong><b>Ссылка</b></article>
+    <section class="slide kind-hero is-active" aria-hidden="false" data-slide="1" data-slide-id="hero" data-chapter="start" data-title="HTML как план страницы" data-cue="2 минуты. Начните с вопроса: «Если посмотреть на любой сайт целиком, из каких больших частей он состоит?» Не называйте теги сами.">
+      <span class="slide-number">01</span>
+      <span class="eyebrow">MetaLabs · Урок 4</span>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <h1 class="hero-title"><span>HTML</span><span>как план</span><span>страницы</span></h1>
+          <p>Сегодня из знакомых тегов соберём понятную страницу: верх, меню, разделы и низ.</p>
+          <div class="hero-path"><b>смотрим</b><i>→</i><b>называем</b><i>→</i><b>собираем</b><i>→</i><b>делаем сами</b></div>
+        </div>
+        <div class="hero-stage" aria-label="Страница сайта разбита на смысловые части">
+          <div class="browser-shell hero-browser">
+            <div class="browser-bar"><span class="browser-dots">● ● ●</span><span>my-site.local</span></div>
+            <div class="mini-site hero-site">
+              <div class="mini-header"><b>МОЙ САЙТ</b><span>Обо мне · Увлечения · Контакты</span></div>
+              <div class="mini-main">
+                <div class="mini-hero-copy"><small>ПЕРВЫЙ САЙТ</small><strong>Привет! Я учусь создавать сайты</strong><p>Здесь будет несколько понятных разделов.</p></div>
+                <div class="mini-photo">HTML</div>
+              </div>
+              <div class="mini-sections"><div><b>Обо мне</b><span>текст</span></div><div><b>Увлечения</b><span>список</span></div></div>
+              <div class="mini-footer">Контакты</div>
+            </div>
+            <div class="hero-tags" aria-hidden="true"><span>&lt;header&gt;</span><span>&lt;main&gt;</span><span>&lt;section&gt;</span><span>&lt;footer&gt;</span></div>
+          </div>
+        </div>
       </div>
-      <div class="pill reveal" data-step="4">HTML = <b>структура страницы</b></div>
-    </div>
-  </section>
+    </section>
 
-  <section class="slide" data-title="HTML CSS JS">
-    <div class="head"><small>02 · ТРИ ТЕХНОЛОГИИ</small><h1>Кто за что <mark>отвечает</mark>?</h1></div>
-    <div class="scene techs">
-      <article class="tech reveal" data-step="1"><span class="icon cyan">&lt;/&gt;</span><h2>HTML</h2><p>Что есть на странице</p><div class="wire"><i></i><i></i></div></article>
-      <article class="tech reveal" data-step="2"><span class="icon violet">✦</span><h2>CSS</h2><p>Как это выглядит</p><div class="wire styled"><i></i><i></i></div></article>
-      <article class="tech reveal" data-step="3"><span class="icon orange">⚡</span><h2>JavaScript</h2><p>Что умеет делать</p><div class="lamp"><i></i><b>ON</b></div></article>
-      <div class="pill bottom reveal" data-step="4">Сегодня фокус: <b>HTML — строим каркас</b></div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Что такое тег">
-    <div class="head"><small>03 · ОСНОВА HTML</small><h1>Что такое <mark>тег</mark>?</h1></div>
-    <div class="scene tag-scene">
-      <div class="huge-code reveal" data-step="1"><span>&lt;p&gt;</span></div>
-      <div class="down reveal" data-step="2">↓</div>
-      <div class="huge-code reveal" data-step="2"><span>&lt;p&gt;</span><b>Привет!</b><span>&lt;/p&gt;</span></div>
-      <div class="labels reveal" data-step="3"><i>открывающий тег</i><i>содержимое</i><i>закрывающий тег</i></div>
-      <div class="pill reveal" data-step="4">Тег — это <b>команда для браузера</b></div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Парные теги">
-    <div class="head"><small>04 · ПАРНЫЕ ТЕГИ</small><h1>Почему <mark>&lt;p&gt;</mark> написан два раза?</h1></div>
-    <div class="scene pair">
-      <article class="gate reveal" data-step="1"><small>НАЧАЛО</small><code>&lt;p&gt;</code></article>
-      <div class="text-box reveal" data-step="2">Здесь находится текст</div>
-      <article class="gate reveal" data-step="3"><small>КОНЕЦ</small><code>&lt;/p&gt;</code></article>
-      <div class="formula reveal" data-step="4"><code>&lt;p&gt;</code><span>текст</span><code>&lt;/p&gt;</code></div>
-      <p class="note reveal" data-step="5">Открыли → положили содержимое → закрыли</p>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Разные теги">
-    <div class="head"><small>05 · У КАЖДОГО ТЕГА СВОЯ РАБОТА</small><h1>Теги бывают <mark>разными</mark></h1></div>
-    <div class="scene tag-list">
-      <div class="row reveal" data-step="1"><code>&lt;h1&gt;Заголовок&lt;/h1&gt;</code><div class="preview h1">Заголовок</div></div>
-      <div class="row reveal" data-step="2"><code>&lt;p&gt;Обычный текст&lt;/p&gt;</code><div class="preview">Обычный текст</div></div>
-      <div class="row reveal" data-step="3"><code>&lt;a&gt;Ссылка&lt;/a&gt;</code><div class="preview link">Ссылка ↗</div></div>
-      <div class="row reveal" data-step="4"><code>&lt;img&gt;</code><div class="preview"><span class="mini-pic">◒</span></div></div>
-      <div class="pill reveal" data-step="5">Название тега говорит браузеру, <b>что это за элемент</b>.</div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Каркас документа">
-    <div class="head"><small>06 · КАРКАС СТРАНИЦЫ</small><h1>HTML-документ — это <mark>дерево</mark></h1></div>
-    <div class="scene two">
-      <div class="tree reveal" data-step="1"><b>html</b><span class="stem"></span><div><i>head</i><i>body</i></div></div>
-      <div class="code reveal" data-step="2"><div class="dots">● ● ●</div><pre><span class="muted">&lt;!DOCTYPE html&gt;</span>
-<span>&lt;html&gt;</span>
-  <span>&lt;head&gt;</span> ... <span>&lt;/head&gt;</span>
-  <span>&lt;body&gt;</span> ... <span>&lt;/body&gt;</span>
-<span>&lt;/html&gt;</span></pre></div>
-      <div class="pill bottom reveal" data-step="3"><b>html</b> — контейнер всей страницы</div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Head">
-    <div class="head"><small>07 · HEAD</small><h1>Что находится в <mark>&lt;head&gt;</mark>?</h1></div>
-    <div class="scene head-demo">
-      <div class="big-word reveal" data-step="1">HEAD<small>служебная часть</small></div>
-      <div class="browser reveal" data-step="2"><div class="browser-bar"><span>Мой сайт</span><i>+</i></div><div class="browser-empty"></div></div>
-      <div class="code compact reveal" data-step="3"><pre><span>&lt;title&gt;</span><b>Мой сайт</b><span>&lt;/title&gt;</span></pre></div>
-      <div class="arrow reveal" data-step="3">↗</div>
-      <div class="pill bottom reveal" data-step="4">HEAD = информация <b>о странице</b>, а не содержимое страницы</div>
-    </div>
-  </section>
-
-  <section class="slide" data-title="Body">
-    <div class="head"><small>08 · BODY</small><h1>Что находится в <mark>&lt;body&gt;</mark>?</h1></div>
-    <div class="scene body-demo">
-      <div class="body-box reveal" data-step="1"><span class="body-label">BODY</span>
-        <h2 class="inner" data-inner="2">Заголовок</h2>
-        <p class="inner" data-inner="3">Обычный текст на странице</p>
-        <div class="hero-pic inner" data-inner="4"><i></i><b></b></div>
-        <a class="inner" data-inner="5">Ссылка ↗</a>
+    <section class="slide kind-recall" aria-hidden="true" data-slide="2" data-slide-id="recall" data-chapter="review" data-title="Вспоминаем прошлое занятие" data-cue="8 минут. Сначала спрашивайте группу. Короткий ответ открывайте только после 2-3 попыток. Если третий урок прошёл иначе, этот экран можно быстро пролистать.">
+      <span class="slide-number">02</span>
+      <span class="eyebrow">Вспоминаем · картинки, ссылки, списки</span>
+      <div class="recap" data-recap>
+        <div class="recap-head">
+          <div><small>БЕЗ ПОДСКАЗКИ</small><h2>Что осталось<br>в голове?</h2><p>Отвечаем своими словами. Код пока не пишем.</p></div>
+          <div class="recap-count"><b data-recap-index>1</b><span>/ 4</span></div>
+        </div>
+        <div class="recap-body">
+          <nav class="recap-tabs" aria-label="Вопросы повторения">
+            <button type="button" class="is-active" data-recap-tab="0"><i>01</i><span>Картинка</span></button>
+            <button type="button" data-recap-tab="1"><i>02</i><span>Ссылка</span></button>
+            <button type="button" data-recap-tab="2"><i>03</i><span>Список</span></button>
+            <button type="button" data-recap-tab="3"><i>04</i><span>Атрибут</span></button>
+          </nav>
+          <article class="recap-card">
+            <span class="recap-topic" data-recap-topic>Картинка</span>
+            <h3 data-recap-question>Как браузер понимает, какую картинку нужно показать?</h3>
+            <div class="recap-answer" data-recap-answer-wrap><p data-recap-answer>В теге &lt;img&gt; мы указываем путь к файлу в атрибуте src. alt кратко описывает изображение.</p></div>
+            <div class="recap-actions"><button class="secondary" type="button" data-recap-reveal>Показать короткий ответ</button><button class="primary" type="button" data-recap-next>Следующий вопрос →</button></div>
+          </article>
+        </div>
       </div>
-      <div class="pill bottom reveal" data-step="6">BODY = <b>то, что видит пользователь</b></div>
-    </div>
-  </section>
+    </section>
 
-  <section class="slide" data-title="Вложенность">
-    <div class="head"><small>09 · ВЛОЖЕННОСТЬ</small><h1>Теги могут быть <mark>внутри</mark> других тегов</h1></div>
-    <div class="scene two nesting">
-      <div class="nest outer reveal" data-step="1"><span>body</span><div class="nest inner" data-inner="2"><span>h1</span><b>Мой сайт</b></div><div class="nest inner" data-inner="3"><span>p</span><b>Привет!</b></div></div>
-      <div class="middle-arrow reveal" data-step="4">→</div>
-      <div class="code reveal" data-step="4"><div class="dots">● ● ●</div><pre><span>&lt;body&gt;</span>
-  <span>&lt;h1&gt;</span>Мой сайт<span>&lt;/h1&gt;</span>
-  <span>&lt;p&gt;</span>Привет!<span>&lt;/p&gt;</span>
-<span>&lt;/body&gt;</span></pre></div>
-      <div class="pill bottom reveal" data-step="5">Тег внутри другого тега = <b>вложенный тег</b></div>
-    </div>
-  </section>
+    <section class="slide kind-zones" aria-hidden="true" data-slide="3" data-slide-id="zones" data-chapter="meaning" data-title="Сначала смотрим на страницу" data-cue="6 минут. Не показывайте названия HTML-тегов сразу. Нажимайте кнопку и просите ребят назвать выделенную часть обычными словами.">
+      <span class="slide-number">03</span>
+      <span class="eyebrow">Сначала глазами пользователя</span>
+      <div class="zones-layout" data-zones data-zone="plain">
+        <div class="zones-copy">
+          <span class="question-pill">Вопрос группе</span>
+          <h2>Из каких больших частей<br>состоит эта страница?</h2>
+          <p>Не код. Просто посмотрим на сайт и разделим его глазами.</p>
+          <div class="zone-current"><i></i><div><b data-zone-title>Сайт целиком</b><small data-zone-note>пока ничего не называем</small></div></div>
+          <button class="primary" type="button" data-zone-next>Показать верх страницы</button>
+        </div>
+        <div class="browser-shell zones-browser">
+          <div class="browser-bar"><span class="browser-dots">● ● ●</span><span>my-site.local</span></div>
+          <div class="zone-site">
+            <header class="zone-part zone-header" data-part="header"><span class="zone-badge">верх страницы</span><b>МОЙ САЙТ</b><nav class="zone-part zone-nav" data-part="nav"><span class="zone-badge">меню</span><a>Обо мне</a><a>Увлечения</a><a>Контакты</a></nav></header>
+            <main class="zone-part zone-main" data-part="main"><span class="zone-badge">основная часть</span><section class="zone-part zone-section" data-part="section"><span class="zone-badge">отдельный раздел</span><div><small>ОБО МНЕ</small><h3>Привет! Я делаю первый сайт</h3><p>Небольшой текст о себе.</p></div><div class="zone-photo">IMG</div></section><section class="zone-section-small"><b>Мои увлечения</b><span>спорт · музыка · игры</span></section></main>
+            <footer class="zone-part zone-footer" data-part="footer"><span class="zone-badge">низ страницы</span><b>Контакты</b><span>мой первый сайт</span></footer>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="slide" data-title="Атрибуты">
-    <div class="head"><small>10 · АТРИБУТЫ</small><h1>Тегу можно дать <mark>дополнительную информацию</mark></h1></div>
-    <div class="scene attr">
-      <div class="huge-code reveal" data-step="1"><span>&lt;a&gt;</span><b>Google</b><span>&lt;/a&gt;</span></div>
-      <div class="attr-chip reveal" data-step="2"><b>href</b> = "https://google.com"</div>
-      <div class="huge-code small reveal" data-step="3"><span>&lt;a <em>href="https://google.com"</em>&gt;</span><b>Google</b><span>&lt;/a&gt;</span></div>
-      <div class="fake-link reveal" data-step="4">Google ↗</div>
-      <div class="pill reveal" data-step="5"><b>Атрибут</b> уточняет, как должен работать тег</div>
-    </div>
-  </section>
+    <section class="slide kind-map" aria-hidden="true" data-slide="4" data-slide-id="map" data-chapter="meaning" data-title="Переводим части страницы на HTML" data-cue="6 минут. Сначала читайте левую колонку обычными словами, затем правую. Пусть группа сама попробует угадать английское слово по смыслу.">
+      <span class="slide-number">04</span>
+      <span class="eyebrow">Обычные слова → HTML</span>
+      <div class="map-scene">
+        <div class="map-head"><h2>У этих частей уже есть<br>понятные имена</h2><p>Мы не придумываем новую страницу. Мы просто подписываем её части.</p></div>
+        <div class="semantic-map">
+          <div class="map-row"><span class="map-russian">верх страницы</span><i>→</i><code>&lt;header&gt;</code></div>
+          <div class="map-row"><span class="map-russian">главные ссылки</span><i>→</i><code>&lt;nav&gt;</code></div>
+          <div class="map-row"><span class="map-russian">основное содержимое</span><i>→</i><code>&lt;main&gt;</code></div>
+          <div class="map-row"><span class="map-russian">отдельный раздел</span><i>→</i><code>&lt;section&gt;</code></div>
+          <div class="map-row"><span class="map-russian">низ страницы</span><i>→</i><code>&lt;footer&gt;</code></div>
+        </div>
+        <div class="map-note"><b>Главная мысль</b><span>Название тега подсказывает, зачем эта часть нужна.</span></div>
+      </div>
+    </section>
 
-  <section class="slide" data-title="Картинка">
-    <div class="head"><small>11 · IMG</small><h1>Как браузер показывает <mark>картинку</mark>?</h1></div>
-    <div class="scene image-demo">
-      <div class="image-left"><div class="huge-code reveal" data-step="1"><span>&lt;img&gt;</span></div><div class="huge-code small reveal" data-step="2"><span>&lt;img <em>src="yurt.jpg"</em>&gt;</span></div><div class="path reveal" data-step="3"><b>img</b><i>→</i><b>src</b><i>→</i><b>yurt.jpg</b><i>→</i></div></div>
-      <div class="photo reveal" data-step="4"><span class="sun"></span><i class="mount m1"></i><i class="mount m2"></i><div class="yurt"><b></b><i></i></div><small>картинка появилась</small></div>
-      <div class="pill bottom reveal" data-step="5"><b>src</b> = откуда взять изображение</div>
-    </div>
-  </section>
+    <section class="slide kind-same" aria-hidden="true" data-slide="5" data-slide-id="same-look" data-chapter="meaning" data-title="Новые теги не меняют внешний вид" data-cue="5 минут. Спросите: «Какой сайт справа выглядит лучше?» Правильный ответ: одинаково. Новые теги нужны прежде всего для смысла и понятного кода, а внешний вид позже задаст CSS.">
+      <span class="slide-number">05</span>
+      <span class="eyebrow">Важно · не путать с CSS</span>
+      <div class="same-scene" data-same>
+        <div class="same-copy"><h2>Новые теги не делают<br>сайт красивее</h2><p>Для человека страница почти не изменится. Зато разработчику код станет понятнее.</p><div class="same-switch"><button class="secondary is-active" type="button" data-same-mode="plain">Без структуры</button><button class="secondary" type="button" data-same-mode="semantic">Со смыслом</button></div></div>
+        <div class="same-demo">
+          <div class="code-card same-code"><div class="code-head"><b data-same-label>index.html · без структуры</b><span>HTML</span></div><pre data-same-code>&lt;body&gt;
+    &lt;h1&gt;Мой сайт&lt;/h1&gt;
+    &lt;a href="#"&gt;Обо мне&lt;/a&gt;
+    &lt;a href="#"&gt;Контакты&lt;/a&gt;
 
-  <section class="slide" data-title="Итог">
-    <div class="head"><small>12 · СОБИРАЕМ ВСЁ ВМЕСТЕ</small><h1>Из кода получается <mark>страница</mark></h1></div>
-    <div class="scene final">
-      <div class="code final-code reveal" data-step="1"><div class="dots">index.html</div><pre><span>&lt;h1&gt;</span>Аренда юрт<span>&lt;/h1&gt;</span>
+    &lt;h2&gt;Обо мне&lt;/h2&gt;
+    &lt;p&gt;Меня зовут...&lt;/p&gt;
 
-<span>&lt;p&gt;</span>Отдых в горах Кыргызстана<span>&lt;/p&gt;</span>
+    &lt;p&gt;Мой первый сайт&lt;/p&gt;
+&lt;/body&gt;</pre></div>
+          <div class="same-arrow">→</div>
+          <div class="browser-shell same-browser"><div class="browser-bar"><span class="browser-dots">● ● ●</span><span>результат</span></div><div class="unstyled-preview"><h1>Мой сайт</h1><p class="links">Обо мне   Контакты</p><h2>Обо мне</h2><p>Меня зовут...</p><p>Мой первый сайт</p></div></div>
+        </div>
+      </div>
+    </section>
 
-<span>&lt;img <em>src="yurt.jpg"</em>&gt;</span>
+    <section class="slide kind-nesting" aria-hidden="true" data-slide="6" data-slide-id="body-map" data-chapter="structure" data-title="Где живут новые теги" data-cue="7 минут. Это ключевой экран для тех, кто путал head и body. Подчеркните: title остаётся в head, а header/main/footer находятся внутри body. Попросите 1-2 учеников прочитать дерево сверху вниз.">
+      <span class="slide-number">06</span>
+      <span class="eyebrow">Вложенность · вспоминаем прошлый урок</span>
+      <div class="nest-scene">
+        <div class="nest-copy"><h2>Всё видимое остаётся<br>внутри <code>&lt;body&gt;</code></h2><p><code>&lt;head&gt;</code> и <code>&lt;body&gt;</code> не меняются. Мы просто аккуратнее собираем содержимое внутри <code>&lt;body&gt;</code>.</p><div class="remember"><b>&lt;title&gt;</b><span>остаётся в <code>&lt;head&gt;</code> и показывает название вкладки</span></div></div>
+        <div class="page-map-card" aria-label="Схема вложенности HTML-страницы">
+          <div class="map-box map-html">
+            <div class="map-title"><code>&lt;html&gt;</code><span>вся HTML-страница</span></div>
 
-<span>&lt;a <em>href="tel:+996..."</em>&gt;</span>
-  Позвонить
-<span>&lt;/a&gt;</span></pre></div>
-      <div class="render reveal" data-step="2"><small>БРАУЗЕР</small>→</div>
-      <div class="site reveal" data-step="3"><nav><b>YURT.</b><span>О нас</span><span>Контакты</span></nav><div class="site-copy"><small>КЫРГЫЗСТАН</small><h2>Аренда юрт</h2><p>Отдых в горах Кыргызстана</p><button>Позвонить</button></div><div class="site-art"><i></i><b></b><div></div></div></div>
-      <div class="formula bottom reveal" data-step="4"><code>HTML-код</code><span>→</span><code>браузер</code><span>→</span><code class="hot">страница</code></div>
-      <p class="note final-note reveal" data-step="5">Теперь открываем VS Code и пишем это руками.</p>
-    </div>
-  </section>
+            <div class="map-split">
+              <div class="map-box map-head">
+                <div class="map-title"><code>&lt;head&gt;</code><span>помогает странице</span></div>
+                <div class="map-box map-inner"><code>&lt;title&gt;</code><span>название вкладки</span></div>
+              </div>
 
-  <footer class="controls"><button id="prev">←</button><div class="progress"><i id="bar"></i></div><div class="hint"><kbd>Space</kbd> следующий шаг</div><button id="next">→</button></footer>
-  <button id="full" class="float one" title="Полный экран (F)">⌗</button><button id="clean" class="float two" title="Скрыть интерфейс (H)">◌</button>
+              <div class="map-box map-body">
+                <div class="map-title"><code>&lt;body&gt;</code><span>всё, что видим</span></div>
+
+                <div class="map-box map-part">
+                  <div class="map-title"><code>&lt;header&gt;</code><span>верх сайта</span></div>
+                  <div class="map-box map-inner"><code>&lt;nav&gt;</code><span>главные ссылки</span></div>
+                </div>
+
+                <div class="map-box map-main">
+                  <div class="map-title"><code>&lt;main&gt;</code><span>основное содержание</span></div>
+                  <div class="map-sections">
+                    <div class="map-box map-inner"><code>&lt;section&gt;</code><span>раздел</span></div>
+                    <div class="map-box map-inner"><code>&lt;section&gt;</code><span>ещё раздел</span></div>
+                  </div>
+                </div>
+
+                <div class="map-box map-part">
+                  <div class="map-title"><code>&lt;footer&gt;</code><span>низ сайта</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide kind-piece" aria-hidden="true" data-slide="7" data-slide-id="header-nav" data-chapter="structure" data-title="Header и nav" data-cue="6 минут. Для этого курса дайте простое правило: header - верх страницы, nav - блок с основными ссылками. Уточните, что nav не заменяет тег a, а собирает ссылки вместе.">
+      <span class="slide-number">07</span>
+      <span class="eyebrow">Верх страницы · два знакомых смысла</span>
+      <div class="piece-layout">
+        <div class="piece-copy"><span class="tag-chip">&lt;header&gt;</span><h2>Собирает верхнюю<br>часть страницы</h2><p>Внутри можно оставить знакомые теги: заголовок, текст, ссылки.</p><div class="piece-rule"><code>&lt;nav&gt;</code><span>не создаёт ссылку. Он собирает главные ссылки вместе.</span></div></div>
+        <div class="piece-demo">
+          <div class="site-fragment header-fragment"><b>МОЙ САЙТ</b><nav><a>Обо мне</a><a>Увлечения</a><a>Контакты</a></nav></div>
+          <pre class="piece-code"><mark>&lt;header&gt;</mark>
+    &lt;h1&gt;Мой сайт&lt;/h1&gt;
+
+    <mark>&lt;nav&gt;</mark>
+        &lt;a href="#"&gt;Обо мне&lt;/a&gt;
+        &lt;a href="#"&gt;Контакты&lt;/a&gt;
+    <mark>&lt;/nav&gt;</mark>
+<mark>&lt;/header&gt;</mark></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide kind-piece" aria-hidden="true" data-slide="8" data-slide-id="main-section" data-chapter="structure" data-title="Main и section" data-cue="8 минут. Скажите простое правило: main - главное содержимое страницы, section - один смысловой раздел внутри него. На наших учебных страницах используем один main. Section обычно имеет свой заголовок.">
+      <span class="slide-number">08</span>
+      <span class="eyebrow">Основная часть · делим на темы</span>
+      <div class="piece-layout reverse">
+        <div class="piece-demo main-piece-demo">
+          <div class="main-visual"><span class="main-label">main</span><section><small>section</small><h3>Обо мне</h3><p>Небольшой текст о себе.</p></section><section><small>section</small><h3>Мои увлечения</h3><p>Список, картинка или текст.</p></section></div>
+          <pre class="piece-code compact-code"><mark>&lt;main&gt;</mark>
+    <mark>&lt;section&gt;</mark>
+        &lt;h2&gt;Обо мне&lt;/h2&gt;
+        &lt;p&gt;Меня зовут...&lt;/p&gt;
+    <mark>&lt;/section&gt;</mark>
+
+    <mark>&lt;section&gt;</mark>
+        &lt;h2&gt;Мои увлечения&lt;/h2&gt;
+        &lt;ul&gt;...&lt;/ul&gt;
+    <mark>&lt;/section&gt;</mark>
+<mark>&lt;/main&gt;</mark></pre>
+        </div>
+        <div class="piece-copy"><span class="tag-chip">&lt;main&gt; + &lt;section&gt;</span><h2>Главное содержимое<br>делим на разделы</h2><p>Не нужно создавать новый HTML-файл для каждой мысли. Один <code>&lt;main&gt;</code> может содержать несколько <code>&lt;section&gt;</code>.</p><div class="piece-rule"><b>Для наших страниц</b><span>один видимый <code>&lt;main&gt;</code> и понятные разделы с заголовками.</span></div></div>
+      </div>
+    </section>
+
+    <section class="slide kind-piece" aria-hidden="true" data-slide="9" data-slide-id="footer" data-chapter="structure" data-title="Footer" data-cue="3 минуты. Не задерживайтесь. Покажите, что footer тоже обычный контейнер для знакомых тегов. Никакой магии и специального внешнего вида нет.">
+      <span class="slide-number">09</span>
+      <span class="eyebrow">Низ страницы</span>
+      <div class="footer-scene">
+        <div class="footer-copy"><span class="tag-chip">&lt;footer&gt;</span><h2>Закрывает страницу<br>по смыслу</h2><p>Здесь часто находятся контакты, дополнительная ссылка или короткая информация о сайте.</p></div>
+        <div class="footer-demo"><div class="footer-page"><div class="footer-fake-content"><span></span><span></span><span></span></div><footer><b>Мой первый сайт</b><span>Контакты · ссылка</span></footer></div><pre>&lt;footer&gt;
+    &lt;p&gt;Мой первый сайт&lt;/p&gt;
+    &lt;a href="..."&gt;Контакты&lt;/a&gt;
+&lt;/footer&gt;</pre></div>
+      </div>
+    </section>
+
+    <section class="slide kind-builder" aria-hidden="true" data-slide="10" data-slide-id="builder" data-chapter="build" data-title="Собираем каркас вместе" data-cue="12 минут. Не нажимайте всё подряд. На каждом шаге спрашивайте группу, какой тег нужен следующим и где его закрыть. После ответа нажимайте кнопку. Обратите внимание на отступы.">
+      <span class="slide-number">10</span>
+      <span class="eyebrow">Собираем вместе · один шаг за раз</span>
+      <div class="builder" data-builder>
+        <div class="builder-head"><div><h2>Превращаем страницу<br>в понятный каркас</h2><p>Содержимое уже знакомо. Новое только то, как мы его группируем.</p></div><div class="step-pill"><b data-build-index>1</b><span>/ 6</span></div></div>
+        <div class="builder-grid">
+          <div class="code-card builder-code"><div class="code-head"><b>index.html</b><span data-build-label>Начинаем с body</span></div><pre data-build-code></pre></div>
+          <div class="builder-arrow">→</div>
+          <div class="browser-shell builder-browser"><div class="browser-bar"><span class="browser-dots">● ● ●</span><span>результат</span></div><div class="builder-preview" data-build-preview></div></div>
+        </div>
+        <div class="builder-actions"><button type="button" class="secondary" data-build-prev>← Назад</button><button type="button" class="primary" data-build-next>Добавить header →</button></div>
+      </div>
+    </section>
+
+    <section class="slide kind-headings" aria-hidden="true" data-slide="11" data-slide-id="headings" data-chapter="build" data-title="Заголовки внутри структуры" data-cue="6 минут. Это повторение по реальной ошибке группы. Не говорите, что h1/h2/h3 отличаются размером. Размер позже задаёт CSS. Для учебных страниц держим один h1, h2 для разделов, h3 для части внутри раздела, p для обычного текста.">
+      <span class="slide-number">11</span>
+      <span class="eyebrow">Повторяем · теперь на настоящей структуре</span>
+      <div class="headings-layout">
+        <div class="headings-copy"><h2>Заголовки показывают<br>уровень смысла</h2><p>Не выбираем <code>&lt;h2&gt;</code> потому, что он меньше. Выбираем его потому, что это заголовок раздела.</p><div class="heading-rule"><b>Для наших страниц:</b><span><code>&lt;h1&gt;</code> главный · <code>&lt;h2&gt;</code> раздел · <code>&lt;h3&gt;</code> часть раздела · <code>&lt;p&gt;</code> обычный текст</span></div></div>
+        <div class="outline-card">
+          <div class="outline-row h1"><code>&lt;h1&gt;</code><b>Мой сайт</b><span>главная тема страницы</span></div>
+          <div class="outline-row h2"><code>&lt;h2&gt;</code><b>Обо мне</b><span>раздел</span></div>
+          <div class="outline-row p"><code>&lt;p&gt;</code><b>Меня зовут...</b><span>обычный текст</span></div>
+          <div class="outline-row h2"><code>&lt;h2&gt;</code><b>Увлечения</b><span>ещё раздел</span></div>
+          <div class="outline-row h3"><code>&lt;h3&gt;</code><b>Спорт</b><span>часть раздела</span></div>
+          <div class="outline-row p"><code>&lt;p&gt;</code><b>Мне нравится...</b><span>обычный текст</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide kind-quiz" aria-hidden="true" data-slide="12" data-slide-id="quiz" data-chapter="check" data-title="Куда это положить" data-cue="6 минут. Пусть отвечают вслух до клика. Если кто-то ошибается, попросите объяснить ход мысли. Здесь важнее логика, чем скорость.">
+      <span class="slide-number">12</span>
+      <span class="eyebrow">Проверяем понимание · без кода</span>
+      <div class="quiz" data-quiz>
+        <div class="quiz-head"><div><small>КУДА ЭТО ПОЛОЖИТЬ?</small><h2 data-quiz-question>Где разместить главные ссылки сайта?</h2></div><div class="quiz-count"><b data-quiz-index>1</b><span>/ 5</span></div></div>
+        <div class="quiz-main">
+          <div class="quiz-visual" data-quiz-visual><div class="quiz-icon">↗</div><b>Обо мне · Увлечения · Контакты</b><span>главные переходы по сайту</span></div>
+          <div class="quiz-options" data-quiz-options></div>
+        </div>
+        <div class="quiz-feedback" data-quiz-feedback>Сначала выберите ответ.</div>
+      </div>
+    </section>
+
+    <section class="slide kind-read" aria-hidden="true" data-slide="13" data-slide-id="read" data-chapter="check" data-title="Читаем готовую страницу" data-cue="5 минут. Не читайте код сами. Попросите одного ученика провести пальцем сверху вниз и объяснить, что начинается на каждой строке. Второй ученик пусть найдёт все закрывающие теги.">
+      <span class="slide-number">13</span>
+      <span class="eyebrow">Перед практикой · читаем целиком</span>
+      <div class="read-layout">
+        <div class="read-copy"><h2>Теперь код можно читать<br>как план страницы</h2><div class="read-prompts"><span>1. Где начинается верх?</span><span>2. Где основное содержимое?</span><span>3. Сколько разделов?</span><span>4. Где заканчивается страница?</span></div></div>
+        <pre class="full-code"><code>&lt;body&gt;
+    <mark>&lt;header&gt;</mark>
+        &lt;h1&gt;Мой сайт&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#"&gt;Обо мне&lt;/a&gt;
+            &lt;a href="#"&gt;Контакты&lt;/a&gt;
+        &lt;/nav&gt;
+    <mark>&lt;/header&gt;</mark>
+
+    <mark>&lt;main&gt;</mark>
+        <mark class="soft">&lt;section&gt;</mark>
+            &lt;h2&gt;Обо мне&lt;/h2&gt;
+            &lt;p&gt;Меня зовут...&lt;/p&gt;
+            &lt;img src="photo.jpg" alt="Моё фото"&gt;
+        <mark class="soft">&lt;/section&gt;</mark>
+
+        <mark class="soft">&lt;section&gt;</mark>
+            &lt;h2&gt;Мои увлечения&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Спорт&lt;/li&gt;
+                &lt;li&gt;Музыка&lt;/li&gt;
+            &lt;/ul&gt;
+        <mark class="soft">&lt;/section&gt;</mark>
+    <mark>&lt;/main&gt;</mark>
+
+    <mark>&lt;footer&gt;</mark>
+        &lt;p&gt;Мой первый сайт&lt;/p&gt;
+    <mark>&lt;/footer&gt;</mark>
+&lt;/body&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="slide kind-practice" aria-hidden="true" data-slide="14" data-slide-id="practice" data-chapter="practice" data-title="Самостоятельная практика" data-cue="30 минут. Пусть ученики откроют страницу с прошлого занятия и перестроят её, а не копируют пример с экрана. Первые 5 минут не помогайте сразу: просите сначала показать, где именно они застряли. Тем, кто закончил раньше, дайте бонус справа.">
+      <span class="slide-number">14</span>
+      <span class="eyebrow">Практика · теперь вы</span>
+      <div class="practice-layout">
+        <div class="practice-main"><div class="practice-title"><div><small>ЗАДАЧА НА 25-30 МИНУТ</small><h2>Возьмите свою страницу<br>и наведите в ней порядок</h2></div><div class="timer" data-timer><b data-timer-display>25:00</b><button type="button" data-timer-toggle>Старт</button></div></div>
+          <ol class="practice-steps">
+            <li><span>1</span><div><b>Верх страницы</b><small>Добавьте <code>&lt;header&gt;</code> и <code>&lt;nav&gt;</code>.</small></div></li>
+            <li><span>2</span><div><b>Главное содержимое</b><small>Поместите его внутрь <code>&lt;main&gt;</code>.</small></div></li>
+            <li><span>3</span><div><b>Разделы</b><small>Сделайте минимум два <code>&lt;section&gt;</code> с понятными <code>&lt;h2&gt;</code>.</small></div></li>
+            <li><span>4</span><div><b>Низ страницы</b><small>Добавьте <code>&lt;footer&gt;</code>.</small></div></li>
+            <li><span>5</span><div><b>Старые знания остаются</b><small>На странице должны быть картинка, ссылка и список.</small></div></li>
+          </ol>
+        </div>
+        <aside class="practice-side"><div class="do-not-copy"><b>Не копируем экран</b><span>Текст, картинки и тема у каждого свои.</span></div><div class="bonus"><small>ЕСЛИ ЗАКОНЧИЛИ РАНЬШЕ</small><h3>Добавьте глубину</h3><ul><li>Сделайте третий смысловой раздел.</li><li>Внутри одного раздела добавьте <code>&lt;h3&gt;</code>.</li><li>Проверьте отступы в коде и порядок закрытия тегов.</li><li>Объясните соседу структуру своей страницы без подсказки.</li></ul></div></aside>
+      </div>
+    </section>
+
+    <section class="slide kind-final-combo" aria-hidden="true" data-slide="15" data-slide-id="final" data-chapter="finish" data-title="Итог урока" data-cue="6-8 минут. Спокойно зафиксируйте главную мысль: HTML теперь читается как схема страницы. Быстро проверьте структуру и сделайте мостик к следующему уроку про CSS.">
+      <span class="slide-number">15</span>
+      <span class="eyebrow">Итог урока · что теперь должно быть понятно</span>
+      <div class="final-combo-layout">
+        <div class="final-combo-main">
+          <div class="final-combo-title">
+            <small>ГЛАВНАЯ МЫСЛЬ</small>
+            <h2>HTML - это не список тегов,<br>а схема страницы</h2>
+            <p>Сегодня мы не делали красоту. Мы навели порядок: где верх, где главное, где разделы и где низ.</p>
+          </div>
+
+          <div class="final-tree" aria-label="План HTML страницы">
+            <div class="final-row header-row"><code>&lt;header&gt;</code><span>верх страницы + меню</span></div>
+            <div class="final-row main-row"><code>&lt;main&gt;</code><div><span>&lt;section&gt; Обо мне</span><span>&lt;section&gt; Увлечения</span><span>&lt;section&gt; Контакты</span></div></div>
+            <div class="final-row footer-row"><code>&lt;footer&gt;</code><span>низ страницы</span></div>
+          </div>
+
+          <div class="next-css">
+            <small>СЛЕДУЮЩИЙ УРОК</small>
+            <b>HTML-каркас готов. Дальше начнём менять внешний вид через CSS.</b>
+            <span>HTML → CSS</span>
+          </div>
+        </div>
+
+        <div class="final-combo-side">
+          <div class="final-panel check-panel">
+            <small>БЫСТРАЯ ПРОВЕРКА</small>
+            <ul>
+              <li><code>&lt;title&gt;</code> внутри <code>&lt;head&gt;</code></li>
+              <li>Всё видимое находится внутри <code>&lt;body&gt;</code></li>
+              <li>Есть <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+              <li><code>&lt;h1&gt;</code> главный, <code>&lt;h2&gt;</code> для разделов, <code>&lt;p&gt;</code> для обычного текста</li>
+              <li>Картинка, ссылка и список остались на странице</li>
+            </ul>
+          </div>
+
+          <div class="final-panel next-panel">
+            <small>СЛЕДУЮЩИЙ ШАГ</small>
+            <h3>Каркас есть. Дальше будем оформлять</h3>
+            <p>На следующем уроке подключим CSS и начнём менять внешний вид: цвета, шрифты, фон и размеры.</p>
+            <div class="next-mini">HTML - смысл и структура. CSS - внешний вид.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <nav class="lesson-controls" aria-label="Навигация по слайдам">
+    <button id="prevBtn" type="button" aria-label="Предыдущий слайд" disabled>←</button>
+    <div class="control-progress"><span id="chapterLabel">Старт</span><div class="progress-wrap" aria-hidden="true"><div id="progress"></div></div></div>
+    <span id="counter">01 / 15</span>
+    <button id="nextBtn" type="button" aria-label="Следующий слайд">→</button>
+    <button id="fullscreenBtn" class="control-icon" type="button" aria-label="Полноэкранный режим">⛶</button>
+    <button id="shortcutHelp" class="control-icon" type="button" aria-label="Показать горячие клавиши">?</button>
+  </nav>
+  <div class="shortcut-tip" role="note"><span><kbd>←</kbd> <kbd>→</kbd> или свайп</span><span><kbd>F</kbd> полный экран</span><span><kbd>T</kbd> подсказка</span></div>
+  <div class="teacher-cue" id="teacherCue" aria-live="polite"></div>
+  <div class="sr-only" id="slideAnnouncer" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="shortcut-dialog" id="shortcutDialog" aria-labelledby="shortcutDialogTitle">
+    <div class="shortcut-dialog__head"><h2 id="shortcutDialogTitle">Горячие клавиши</h2><button id="closeShortcutDialog" type="button" aria-label="Закрыть">×</button></div>
+    <dl><div><dt>← / →</dt><dd>предыдущий / следующий слайд</dd></div><div><dt>Space</dt><dd>следующий слайд</dd></div><div><dt>F</dt><dd>полноэкранный режим</dd></div><div><dt>T</dt><dd>подсказка преподавателю</dd></div><div><dt>Esc</dt><dd>закрыть окно</dd></div></dl>
+  </dialog>
 </main>
-<script src="app.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
